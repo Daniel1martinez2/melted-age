@@ -5,10 +5,11 @@
     var blobs;
     var blobGraph;
     var bg;
-
+    let currentBg = './images/xample.webp'; 
     p.preload = function () {
-      bg = p.loadImage('./images/gato.jpg');
-    }
+      bg = p.loadImage(currentBg);
+    }; 
+  
     
     p.setup = function () {
       var canvas = p.createCanvas(p.windowWidth, p.windowHeight);
@@ -17,9 +18,9 @@
       blobGraph = p.createGraphics(p.windowWidth, p.windowHeight);      
 
       blobs = [
-        new Blob(blobGraph, 200, 150, 800),
-        new Blob(blobGraph, p.windowWidth * .4, p.windowHeight / 2, 700),
-        new Blob(blobGraph, p.windowWidth * .3, p.windowHeight - 100, 650),
+        new Blob(blobGraph, 200, 150, 100),
+        new Blob(blobGraph, p.windowWidth * .4, p.windowHeight / 2, 70),
+        new Blob(blobGraph, p.windowWidth * .3, p.windowHeight - 100, 65),
       ];
     }
     p.draw = function () {
@@ -39,10 +40,12 @@
         blob.toggle();
       });
     }
-
+    p.windowResized =()=>{
+      p.resizeCanvas(p.windowWidth, p.windowHeight)
+    } 
     var title = document.querySelector('.title');
-    title.addEventListener('mouseenter', p.mouseClicked);
-    title.addEventListener('mouseleave', p.mouseClicked);
+    // title.addEventListener('mouseenter', p.mouseClicked);
+    // title.addEventListener('mouseleave', p.mouseClicked);
 
   });
 

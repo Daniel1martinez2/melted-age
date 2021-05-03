@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Pangolin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+/* font-family: 'Krona One', sans-serif; */
+/* font-family: 'Antonio', sans-serif;
+font-family: 'Pangolin', cursive; 
+font-family: 'Alegreya', serif;
+font-family: 'Zen Dots', cursive;
+*/
 body, html {
   margin: 0;
 }
@@ -5,16 +16,41 @@ body, html {
 #p5parent{
   position: fixed;
 }
-
+.line{
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.line__path{
+  stroke: lightgreen;
+}
 body{
   background-color: rgb(11, 9, 19);
+  animation: background 4s infinite ease-in-out;
+}
+
+@keyframes background {
+  0% {
+    background-color: rgb(11, 9, 19);
+  }
+  30% {
+    background-color: rgb(36, 29, 65);
+  }
+  100% {
+    background-color: rgb(11, 9, 19);
+  }
 }
 
 .title{
   position: fixed;
-  top: 300px;
-  left: 300px;
-  font-family: sans-serif;
-  font-size: 90px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
   color: lightgreen;
+}
+
+.hidden{
+  display: none;
 }
