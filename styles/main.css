@@ -1,0 +1,20 @@
+body, html {
+  margin: 0;
+}
+
+#p5parent{
+  position: fixed;
+}
+
+body{
+  background-color: rgb(11, 9, 19);
+}
+
+.title{
+  position: fixed;
+  top: 300px;
+  left: 300px;
+  font-family: sans-serif;
+  font-size: 90px;
+  color: lightgreen;
+}
