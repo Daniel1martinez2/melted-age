@@ -49,6 +49,7 @@ body{
   transform: translate(-50%, -50%);
   font-size: 80px;
   color: lightgreen;
+  mix-blend-mode: exclusion;
 }
 
 .hidden{

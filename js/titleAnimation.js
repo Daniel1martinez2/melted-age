@@ -6,6 +6,7 @@ const setTitleAnimation = (titleText, titleElem) =>{
     currentWord.classList.add('word-span'); 
     currentWord.innerText = elem; 
     titleElem.appendChild(currentWord); 
+    currentWord.style.fontFamily = fonts[Math.round(Math.random()*fonts.length)]; 
     setInterval(() => {
       currentWord.style.fontFamily = fonts[Math.round(Math.random()*fonts.length)]; 
     }, Math.round (Math.random()*1000 +1000));
