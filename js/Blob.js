@@ -5,13 +5,16 @@ class Blob {
     this.pos = p.createVector(x, y); //vector who represents the position x and y
     this.size = 0; // innit size, 0 cause the blobs at the beginning are hidden
     this.finalSize = size; //actual size we want
-    this.display = false; //activates the blobs growth
+    this.display = true; //activates the blobs growth
+    this.copyCat = this.pos.copy(); 
 
     this.col = p.color(255, 255, 0);
 
     this.leftOffset = p.random(4125123125123);
     this.rightOffset = p.random(4125123125123);
     this.genOffset = p.random(4125123125123);
+    this.step = 0.01;
+    this.amount = 0;
   }
 
   computeDisplay(){
@@ -94,14 +97,20 @@ class Blob {
       center: center,
       bottom: bottom
     }
-  }
-
+  }  
   move(x, y){
-    this.pos.set(x, y);
+    let v1 = this.p.createVector(this.copyCat.x, this.copyCat.y);
+    let v2 = this.p.createVector(x, y);
+    if (this.amount > 1 || this.amount < 0) {
+      // this.step *= -1;
+      this.step = 0;
+    }
+    this.amount += this.step;
+    let v3 = p5.Vector.lerp(v1, v2, this.amount);
+    this.pos.x = v3.x; 
+    this.pos.y = v3.y;   
   }
-
   toggle(){
     this.display = !this.display;
   }
-
 }

@@ -18,11 +18,12 @@
       blobGraph = p.createGraphics(p.windowWidth, p.windowHeight);      
 
       blobs = [
-        new Blob(blobGraph, 200, 150, 100),
-        new Blob(blobGraph, p.windowWidth * .4, p.windowHeight / 2, 70),
-        new Blob(blobGraph, p.windowWidth * .3, p.windowHeight - 100, 65),
+        // new Blob(blobGraph, 200, 200, 20),
+        // new Blob(blobGraph, p.windowWidth * .4, p.windowHeight / 2, 70),
+        // new Blob(blobGraph, p.windowWidth * .3, p.windowHeight - 100, 65),
       ];
     }
+    
     p.draw = function () {
       p.clear(); 
       blobGraph.clear();
@@ -34,11 +35,16 @@
       copy.copy(bg, 0, 0, bg.width, bg.height, 0, 0, p.windowWidth, p.windowHeight);
       copy.mask(blobGraph);
       p.image(copy, 0, 0);
+
+
+      blobs.forEach((elem)=>elem.move(580,480));
+
     }
     p.mouseClicked = function() {
-      blobs.forEach(function(blob){
-        blob.toggle();
-      });
+      blobs.push(new Blob(blobGraph, p.mouseX, p.mouseY, p.random(5,200)),)
+      // blobs.forEach(function(blob){
+      //   blob.toggle();
+      // });
     }
     p.windowResized =()=>{
       p.resizeCanvas(p.windowWidth, p.windowHeight)
