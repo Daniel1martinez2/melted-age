@@ -15,3 +15,7 @@ const setTitleAnimation = (titleText, titleElem) =>{
 }
 
 setTitleAnimation('Melted  Age', document.querySelector('.title')); 
+
+
+
+

@@ -1,0 +1,76 @@
+﻿{
+  "glaciars": [
+    {
+      "name": "uk211",
+      "startSize": 2181,
+      "midSize": 8308,
+      "endSize": 748
+    },
+    {
+      "name": "b15b",
+      "startSize": 5477,
+      "midSize": 2230,
+      "endSize": 1761
+    },
+    {
+      "name": "c28a2",
+      "startSize": 9136,
+      "midSize": 7074,
+      "endSize": 4716
+    },
+    {
+      "name": "a43f",
+      "startSize": 2832,
+      "midSize": 1527,
+      "endSize": 915
+    },
+    {
+      "name": "b15d",
+      "startSize": 1321,
+      "midSize": 1914,
+      "endSize": 818
+    },
+    {
+      "name": "b15j",
+      "startSize": 3646,
+      "midSize": 2549,
+      "endSize": 1321
+    },
+    {
+      "name": "c10",
+      "startSize": 2285,
+      "midSize": 4049,
+      "endSize": 953
+    },
+    {
+      "name": "c19c",
+      "startSize": 1745,
+      "midSize": 2718,
+      "endSize": 1073
+    },
+    {
+      "name": "uk24",
+      "startSize": 1828,
+      "midSize": 4417,
+      "endSize": 887
+    },
+    {
+      "name": "a27",
+      "startSize": 3549,
+      "midSize": 640,
+      "endSize": 1188
+    },
+    {
+      "name": "a38b",
+      "startSize": 3160,
+      "midSize": 2171,
+      "endSize": 1458
+    },
+    {
+      "name": "a43b",
+      "startSize": 1314,
+      "midSize": 2716,
+      "endSize": 859
+    }
+  ]
+}

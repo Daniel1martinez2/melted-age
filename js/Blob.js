@@ -15,6 +15,10 @@ class Blob {
     this.genOffset = p.random(4125123125123);
     this.step = 0.01;
     this.amount = 0;
+    this.focusPoint = {
+      x: p.random(100,600),
+      y:p.random(100,600),
+    }
   }
 
   computeDisplay(){
@@ -109,6 +113,9 @@ class Blob {
     let v3 = p5.Vector.lerp(v1, v2, this.amount);
     this.pos.x = v3.x; 
     this.pos.y = v3.y;   
+  }
+  moveRandom(){
+    this.move(this.focusPoint.x, this.focusPoint.y); 
   }
   toggle(){
     this.display = !this.display;
