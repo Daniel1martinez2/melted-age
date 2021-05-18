@@ -13,7 +13,7 @@ class Blob {
     this.leftOffset = p.random(4125123125123);
     this.rightOffset = p.random(4125123125123);
     this.genOffset = p.random(4125123125123);
-    this.step = 0.01;
+    this.step = p.random(0.008, 0.01);
     this.amount = 0;
     this.focusPoint = {
       x: p.random(30,p.windowWidth),

@@ -23,7 +23,7 @@
         // new Blob(blobGraph, p.windowWidth * .4, p.windowHeight / 2, 70),
         // new Blob(blobGraph, p.windowWidth * .3, p.windowHeight - 100, 65),
       ];
-      getJson('../database/Glaciars.JSON').then(data => {
+      getJson('./database/Glaciars.JSON').then(data => {
         //console.log(data.glaciars);
         //using the data
        blobs.push(...data.glaciars.map(elem=>new Blob(blobGraph,p.random(0,900) , p.random(0,400), elem.startSize / 20)))

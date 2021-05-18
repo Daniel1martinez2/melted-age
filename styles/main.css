@@ -50,6 +50,7 @@ body{
   font-size: 80px;
   color: lightgreen;
   mix-blend-mode: exclusion;
+  user-select: none; 
 }
 
 .hidden{
