@@ -48,7 +48,12 @@
         elem.moveRandom();
       
       });
-
+      p.strokeWeight(10)
+      p.stroke(255,0,0); 
+      blobs.forEach((blob,index)=>{
+        let sgt = index+1 > blobs.length-1? blobs.length-1 :  index+1;
+        p.line(blob.pos.x,blob.pos.y,blobs[sgt].pos.x,blobs[sgt].pos.y); 
+      }); 
     }
     p.mouseClicked = function() {
       blobs.push(new Blob(blobGraph, p.mouseX, p.mouseY, p.random(5,200)),)
