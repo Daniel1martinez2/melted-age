@@ -19,3 +19,24 @@ const getJson = (dataPath) => {
 // getJson('./database/Glaciars.JSON').then(data => {
 //   console.log(data.glaciars);
 // }); 
+
+//await way
+
+// const test = async () => {
+//   getJson('./database/Glaciars.JSON').then(data => {
+//     console.log(data.glaciars);
+//   }); 
+
+//   try{
+//     const data = await getJson('');
+
+//   }
+// }
+
+
+// switch (key) {
+//   case value:
+//     break;
+//   default:
+//     break;
+// }

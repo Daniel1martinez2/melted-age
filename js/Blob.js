@@ -1,12 +1,13 @@
 class Blob {
     
-  constructor (p, x, y, size){
+  constructor (p, x, y, size, name){
     this.p = p; //argument
     this.pos = p.createVector(x, y); //vector who represents the position x and y
     this.size = 0; // innit size, 0 cause the blobs at the beginning are hidden
     this.finalSize = size; //actual size we want
     this.display = true; //activates the blobs growth
     this.copyCat = this.pos.copy(); 
+    this.name = name; 
 
     this.col = p.color(255, 255, 0);
 
