@@ -18,7 +18,7 @@ class Blob {
     this.amount = 0;
     this.focusPoint = {
       x: p.random(30,p.windowWidth),
-      y:p.random(30,p.windowHeight),
+      y:p.random(200,p.windowHeight),
     }
   }
 

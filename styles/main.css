@@ -49,8 +49,12 @@ body{
   transform: translate(-50%, -50%);
   font-size: 80px;
   color: lightgreen;
-  mix-blend-mode: exclusion;
   user-select: none; 
+  mix-blend-mode: exclusion;
+}
+span{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: violet;
 }
 
 .hidden{

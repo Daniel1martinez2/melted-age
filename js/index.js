@@ -6,6 +6,12 @@
     var blobGraph;
     var bg;
     let currentBg = './images/xample.webp'; 
+    let noiseScale ={
+      r: 0.0, 
+      g: 0.0, 
+      b: 0.0, 
+    };
+  
     p.preload = function () {
       bg = p.loadImage(currentBg);
     }; 
@@ -27,14 +33,14 @@
         //console.log(data.glaciars);
         //using the data
        //blobs.push(...data.glaciars.map(elem=>new Blob(blobGraph,p.random(0,900) , p.random(0,400), elem.startSize / 20,elem.name )))
-       blobs.push(...data.glaciars.map(elem=>new Blob(blobGraph,p.windowWidth/2 ,100, elem.startSize / 20,elem.name )))
+        blobs.push(...data.glaciars.map(elem=>new Blob(blobGraph,p.windowWidth/2 ,100, elem.startSize / 40,elem.name )))
       });
     }
     
 
-    const linesInfo = (blob, index) =>{
-      p.strokeWeight(5)
-      p.stroke(255,0,0); 
+    const linesInfo = (blob, index, noiseVal) =>{
+      p.strokeWeight(noiseVal.g / 2)
+      p.stroke(noiseVal.r, noiseVal.g, noiseVal.b); 
       let sgt = index+1 > blobs.length-1? blobs.length-1 :  index+1;
       p.line(blob.pos.x,blob.pos.y,blobs[sgt].pos.x,blobs[sgt].pos.y); 
       //p.text(`blob: ${blob.name}`, blob.pos.x,blob.pos.y )
@@ -44,18 +50,25 @@
     p.draw = function () {
       p.clear(); 
       blobGraph.clear();
+      noiseScale.r += 0.01; 
+      noiseScale.g += 0.1; 
+      noiseScale.b += 0.2; 
+      let noiseVal = {
+        r: Math.round( p.noise(noiseScale.r)* 255),
+        g: Math.round( p.noise(noiseScale.g)* 255),
+        b: Math.round( p.noise(noiseScale.b)* 255),
+      }
       blobs.forEach((blob, index) => {
         blob.draw();
         blob.computeDisplay();
         blob.moveRandom();
-        linesInfo(blob, index); 
+        linesInfo(blob, index, noiseVal); 
       });
       var copy = p.createImage(p.windowWidth, p.windowHeight);
       copy.copy(bg, 0, 0, bg.width, bg.height, 0, 0, p.windowWidth, p.windowHeight);
       copy.mask(blobGraph);
 
       p.image(copy, 0, 0);
-
 
       // blobs.forEach((elem)=>{
       //   //elem.move(focusPoint.x, focusPoint.y)
