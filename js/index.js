@@ -6,6 +6,12 @@
     var blobGraph;
     var bg;
     let currentBg = './images/xample.webp'; 
+    const imgs = [
+      './images/a1.jpeg',
+      './images/a2.jpeg',
+      './images/a3.jpeg',
+      './images/a4.jpeg',
+    ];
     let noiseScale ={
       r: 0.0, 
       g: 0.0, 
@@ -13,7 +19,10 @@
     };
   
     p.preload = function () {
-      bg = p.loadImage(currentBg);
+      let randomImage = Math.round(Math.random()* (imgs.length-1)); 
+      console.log(randomImage);
+      bg = p.loadImage(imgs[randomImage]);
+      //bg = p.loadImage(currentBg);
     }; 
   
     
@@ -78,7 +87,8 @@
     }
     p.mouseClicked = function() {
       blobs.push(new Blob(blobGraph, p.mouseX, p.mouseY, p.random(5,200), 'generated'))
-      
+      // blobs[0].display = !blobs[0].display;
+      // blobs.splice(0,1); 
 
       // blobs.forEach(function(blob){
       //   blob.toggle();
