@@ -48,7 +48,7 @@
     
 
     const linesInfo = (blob, index, noiseVal) =>{
-      p.strokeWeight(noiseVal.g / 2)
+      p.strokeWeight(noiseVal.g / 18)
       p.stroke(noiseVal.r, noiseVal.g, noiseVal.b); 
       let sgt = index+1 > blobs.length-1? blobs.length-1 :  index+1;
       p.line(blob.pos.x,blob.pos.y,blobs[sgt].pos.x,blobs[sgt].pos.y); 
