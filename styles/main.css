@@ -42,6 +42,20 @@ body{
   }
 }
 
+.card{
+  padding: 1em;
+  position: fixed;
+  width: 15em;
+  height: 8em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 230px;
+  background-color: white;
+  border-radius: 8px;
+}
+.close{
+  cursor: pointer;
+}
 .title{
   position: fixed;
   top: 5%;
@@ -49,7 +63,7 @@ body{
   transform: translate(-50%, -50%);
   font-size: 80px;
   color: lightgreen;
-  user-select: none; 
+  /* user-select: none;  */
   mix-blend-mode: exclusion;
 }
 span{

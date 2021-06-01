@@ -13,4 +13,18 @@ const setTitleAnimation = (titleText, titleElem) =>{
   });
   
 }
-setTitleAnimation('Melted  Age', document.querySelector('.title')); 
+const title = document.querySelector('.title');
+const card = document.querySelector('.card');
+setTitleAnimation('Melted  Age',title); 
+title.addEventListener('mousemove', ()=>{
+  card.classList.remove('hidden'); 
+}); 
+
+const close= document.querySelector('.close');
+close.addEventListener('click', (event)=> {
+event.stopPropagation; 
+event.preventDefault; 
+  card.classList.add('hidden')
+})
+
+//https://www.scp.byu.edu/iceberg/
